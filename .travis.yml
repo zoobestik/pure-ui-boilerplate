@@ -1,0 +1,24 @@
+sudo: false
+dist: trusty
+
+language: node_js
+
+node_js:
+  - "10"
+  - "node"
+
+branches:
+  except:
+    - gh-pages
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+env:
+  CXX=g++-4.8
+
+notifications:
+  email: false

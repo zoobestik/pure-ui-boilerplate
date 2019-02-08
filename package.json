@@ -1,0 +1,76 @@
+{
+  "name": "pure-ui-boilerplate",
+  "version": "1.0.0",
+  "author": "zoobestik <kb.chernenko@gmail.com>",
+  "description": "Pure UI boilerplate",
+  "homepage": "https://pure-ui-boilerplate.github.io",
+  "main": "app/index.js",
+  "bugs": {
+    "url": "https://github.com/zoobestik/pure-ui-boilerplate/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.5.0"
+  },
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "scripts": {
+    "dev": "webpack -d --watch",
+    "dist": "cross-env NODE_ENV=production webpack -p",
+    "lint": "eslint --cache --ext .js,.mjs .",
+    "postinstall": "echo \"Error: no postinstall specified\" && exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged"
+  },
+  "pre-commit": [
+    "precommit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zoobestik/pure-ui-boilerplate.git"
+  },
+  "lint-staged": {
+    "*.{js,mjs}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "axios": "^0.18.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-plugin-annotate-pure-calls": "^0.4.0",
+    "history": "^4.7.2",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.0.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "brotli-webpack-plugin": "^1.0.0",
+    "clean-webpack-plugin": "^1.0.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
+    "csso-webpack-plugin": "^1.0.0-beta.12",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "lint-staged": "^8.1.3",
+    "mini-css-extract-plugin": "^0.5.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.5.0",
+    "pre-commit": "^1.2.2",
+    "prop-types": "^15.6.2",
+    "terser-webpack-plugin": "^1.2.2",
+    "webpack": "^4.29.3",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.2.3"
+  }
+}

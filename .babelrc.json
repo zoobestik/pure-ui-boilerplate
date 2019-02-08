@@ -1,0 +1,23 @@
+{
+    "presets": [
+        ["@babel/preset-env", {
+            "targets": {
+                "node": "current",
+                "browsers": [
+                    "last 2 Chrome versions",
+                    "last 2 Firefox versions"
+                ]
+            },
+            "loose": true,
+            "useBuiltIns": "usage"
+        } ]
+    ],
+    "env": {
+        "production": {
+            "plugins": [
+                "annotate-pure-calls",
+                "transform-react-remove-prop-types"
+            ]
+        }
+    }
+}
