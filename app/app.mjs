@@ -1,6 +1,9 @@
 /* eslint-env node */
 import { createServer } from 'http';
 import { createReadStream } from 'fs';
+import { parse } from 'url';
+import { basename } from 'path';
+import { contentType } from 'mime-types';
 import { createFactory } from 'react';
 import { renderToString } from 'react-dom/server';
 import { createMemoryHistory } from 'history';
@@ -20,6 +23,8 @@ createServer(async (req, res) => {
         console.log(`${httpVersion} ${method} ${url}`);
 
         if (url.startsWith('/dist/')) {
+            const resourceType = contentType(basename(parse(url).pathname));
+            if (resourceType) res.setHeader('Content-Type', resourceType);
             createReadStream(`.${url}`).pipe(res);
             return;
         }

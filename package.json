@@ -47,6 +47,7 @@
     "babel-plugin-annotate-pure-calls": "^0.4.0",
     "css-modules-require-hook": "^4.2.3",
     "history": "^4.7.2",
+    "mime-types": "^2.1.22",
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
   },
